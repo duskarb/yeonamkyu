@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Drunkfonts';
+    src: url('DRUNKFONTS-Regular.otf') format('opentype');
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    text-align: left;
+}
+
+.navbar-brand {
+    font-family: 'Drunkfonts', sans-serif;
+    font-size: 3rem;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    transition: transform .2s, background-color .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+}
+
+.modal-header {
+    border-bottom: 1px solid #333;
+}
+
+
+
+.modal-body img, .modal-body video {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.project-item {
+    text-decoration: underline;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 0 0 2px 0;
+    display: block;
+}
+
+.project-item.selected {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#project-sidebar {
+    position: fixed;
+    top: 100px; /* Adjust based on navbar height */
+    left: 0;
+    height: calc(100vh - 100px); /* Adjust based on navbar height */
+    overflow-y: auto;
+    z-index: 1000;
+    background-color: #121212; /* Match body background */
+    padding-right: 15px; /* Bootstrap's default column padding */
+    padding-left: 15px; /* Bootstrap's default column padding */
+}
+
+/* Adjust main content to account for fixed sidebar */
+.col-md-9 {
+    margin-left: 25%; /* Approximate width of col-md-3 */
+}
+
+.lead {
+    color: #121212; /* Make text invisible initially */
+}
+
+.flashlight-container {
+    position: relative;
+    /* This container will hold the text and the flashlight effect */
+}
+
+.flashlight-text {
+    color: #ffffff; /* Visible color when flashlight shines */
+    /* This will be masked by the flashlight effect */
+}
+
+.flashlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212; /* Same as body background */
+    mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 20%, black 100%);
+    -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), transparent 0%, transparent 20%, black 100%);
+    pointer-events: none; /* Allow mouse events to pass through */
+}
+
